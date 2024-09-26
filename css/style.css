@@ -239,13 +239,7 @@ footer .container-top {
   background-position: bottom;
 }
 
-.w1 {
-  animation: w1 7s linear forwards;
-}
-
 .w2 {
-  animation: w2 6s linear -0.125s forwards,
-    desplazamiento 6s ease -0.125s forwards;
   opacity: 0.5;
   height: 100%;
   width: 6000px;
@@ -279,6 +273,7 @@ footer .container-top {
     transform: translateY(10px);
   }
 }
+
 /*WAVE FINAL*/
 
 /*! FOOTER FIN */
