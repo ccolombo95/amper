@@ -1,4 +1,5 @@
-/*! NAVBAR  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -6,8 +7,11 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  font-family: 'Poppins';
 }
-.navbar-container {
+
+
+/* .navbar-container {
   padding: 1.5rem 0;
   width: 100%;
   position: fixed;
@@ -135,7 +139,7 @@ body {
     opacity: 0;
     transition: opacity 0.1s ease, visibility 0s linear, max-height 0.5s ease; /* Transición de opacidad, visibilidad y max-height */
 
-    border: none;
+    /* border: none;
     border-top: 3px solid #115a4a;
 
     border-radius: 2px;
@@ -171,11 +175,11 @@ body {
       margin: 0;
     }
   }
-}
+} */ 
 /*! NAVBAR FIN */
 
 /*! FOOTER  */
-footer {
+/* footer {
   border-top: 1.5px solid rgb(185, 185, 185);
   display: flex;
   flex-direction: column;
@@ -278,7 +282,279 @@ footer .container-top {
   50% {
     transform: translateY(10px);
   }
-}
+} */
 /*WAVE FINAL*/
 
 /*! FOOTER FIN */
+
+
+/* BOTON GENERICO PARA DESPLAZAR ARRIBA*/
+.scroll-to-top-section {
+  padding: 30px; /* Ajusta el padding para simular el py-20 de Tailwind */
+}
+
+.scroll-to-top-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.scroll-to-top-button {
+  position: relative; 
+  background-color: rgb(17, 94, 89);
+  color: white; 
+  border: none;
+  border-radius: 50%; 
+  width: 64px; 
+  height: 64px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.scroll-to-top-button:hover {
+  background-color: rgb(12, 66, 63)/* Color similar a bg-teal-700 */; /* Color al pasar el ratón similar a hover:bg-teal-800 */
+}
+/* LINEA GRADIENTE SOLO INVOCAR LA CLASE DENTRO D UN DIV*/
+.gradient-bar {
+  width: 100%; /* Ocupa el 100% del ancho de la ventana */
+  height: 6px;  /* 2 unidades en Tailwind son 8px */
+  background: linear-gradient(to right, #00695c, #00796b, #80cbc4, #2196f3); /* Color del degradado */
+  border-radius: 9999px; /* Borde redondeado completo */
+}
+
+/* NAV MENU GENERAL ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+
+.nav {
+  --padding-container: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav__title {
+  color: white;
+}
+
+
+.nav__link {
+  font-size: 1.1rem;
+  margin-left: auto;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 2em;
+}
+
+.nav__items {
+  list-style: none;
+}
+
+.nav__links {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__menu, .icono-menu{
+  margin-left: auto;
+  cursor: pointer;
+  display: none;
+}
+
+.nav__img {
+  display: block;
+  width: 30px;
+}
+
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001A49;
+}
+
+
+
+
+.nav__close{
+  display: var(--show, none);
+}
+
+.nav__links {
+  color: #fff;
+  text-decoration: none;
+  position: relative; 
+  padding-bottom: 2px; 
+}
+
+.nav__links::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #fff; 
+  transition: width 0.3s ease-in-out;
+}
+
+.nav__links:hover::after {
+  width: 100%; 
+}
+.nav__links.active::after {
+  width: 100%; /* Ancho completo cuando la clase active está presente */
+}
+
+@media (max-width:800px){
+  .nav__menu, .icono-menu{
+      display: block;
+  }
+  
+
+  .nav__link--menu{
+      position: fixed;
+      background-image: radial-gradient(circle at 0% 0%, #5ea186 0, #4c9980 16.67%, #348f79 33.33%, #008371 50%, #007769 66.67%, #006d64 83.33%, #006562 100%);
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: .7s opacity;
+      font-size: 1.3rem;
+  }
+
+  .nav__link--show{
+      --show: block;
+      opacity:1 ;
+      pointer-events: unset;
+  }
+
+  .nav__close , .icono-cerrar{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 30px;
+      cursor: pointer;
+  }
+}
+
+/*FOOTER GRAL/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+footer {
+  font-family: 'Poppins' !important;
+  position: relative;
+  background-image: url('/amper/imgs/footer.svg'); /* Asegúrate de colocar la ruta correcta de tu SVG */
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.footer-container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px;
+}
+
+.footer-container div {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.logo h2 {
+  color: #28a18f;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.pages, .social {
+  color: #28a18f;
+}
+
+.pages h3, .social h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.pages ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pages ul li, .social p{
+  margin: 5px 0;
+  color: #333;
+  padding: 5px;
+}
+
+
+.pages ul li a{
+  color: #333;
+}
+
+.pages ul li a:hover{
+  color: #6b6b6b;
+  transition: 1s;
+}
+
+.social p {
+  margin: 5px 0;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-container div {
+    margin-bottom: 20px;
+  }
+
+  .logo h2 {
+    font-size: 22px;
+  }
+
+  .pages ul li, .social p {
+    font-size: 14px;
+  }
+
+  .pages h3, .social h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h2 {
+    font-size: 20px;
+  }
+
+  .pages ul li, .social p {
+    font-size: 12px;
+  }
+
+  .pages h3, .social h3 {
+    font-size: 14px;
+  }
+}

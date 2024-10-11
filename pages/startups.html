@@ -7,85 +7,74 @@
     <link rel="stylesheet" href="./../css/style.css" />
   </head>
   <body>
-    <header class="navbar-container">
-      <nav>
-        <div class="navbar-container-span">
-          <a href="/" class="navbar-logo-container">
-            <img class="navbar-logo" src="/imgs/logo.jpg" alt="logo Amper" />
-            <p>AMPER</p>
-          </a>
+    <header class="hero" >
+      <nav class="nav container" >
+          <div class="nav__logo" >
+              <h2 class="nav__title">Amper</h2>
+          </div>
+          <ul class="nav__link nav__link--menu">
+              <li class="nav__items">
+                  <a href="/amper/index.html" class="nav__links">Inicio</a>
+              </li>
+              <li class="nav__items">
+                  <a href="#" class="nav__links">Emprendimientos</a>
+              </li>
+              <li class="nav__items">
+                  <a href="#" class="nav__links">Quienes somos</a>
+              </li>
+              <li class="nav__items">
+                  <a href="#" class="nav__links">Iniciativas</a>
+              </li>
+              <li class="nav__items">
+                  <a href="/amper/pages/donations.html" class="nav__links active">Donar</a>
+              </li>
+              <div class="nav__close">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill:#fff;"><path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path></svg>                 </div>
+          </ul>
 
-          <span class="navbar-icon" onClick="toggleMenu">
-            <span class="line-1"></span>
-            <span class="line-2"></span>
-            <span class="line-3"></span>
-          </span>
-        </div>
-
-        <ul class="navbar-list menu-open">
-          <li class="navbar-list-item">
-            <a href="/" class="navbar-link">Inicio</a>
-          </li>
-          <li class="navbar-list-item">
-            <a href="#" class="navbar-link">Emprendimientos</a>
-          </li>
-          <li class="navbar-list-item">
-            <a href="#" class="navbar-link">Quiénes somos</a>
-          </li>
-          <li class="navbar-list-item">
-            <a href="#" class="navbar-link">Iniciativas</a>
-          </li>
-          <li class="navbar-list-item">
-            <a href="#" class="navbar-link" 
-              >Contacto</a
-            >
-          </li>
-          <li class="navbar-list-item">
-            <a href="#" class="navbar-link donation" "
-              >Donar</a
-            >
-          </li>
-        </ul>
+          <div class="nav__menu">
+              <div class="nav__img">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill:#fff;"><path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path></svg>                </div>
+          </div>
       </nav>
-    </header>
+
+      <section class="hero__container container">
+          <h1 class="hero__title">Apoya a Emprendedores Innovadores</h1>
+          <p class="hero__paragraph">Tu apoyo puede ser la clave que impulse a emprendedores apasionados a llevar sus proyectos al siguiente nivel. </p>
+          <a href="#" onclick="desplazar ('PorQueDonar')" class="cta">Comienza ahora</a>
+      </section>
+  </header>
     <main>
-      <div style="height: 400px;"></div>
 
 
     </main>
     <footer>
-      <div class="container-top">
-        <div class="container-top-left">
-          <img src="/imgs/logo.jpg" alt="">
-          <p class="navbar-logo-container">AMPER</p>
-  
+      <hr style="border-top: #005547;">
+      <div class="footer-container">
+        <div class="logo">
+          <img src="/amper/imgs/logo.jpg" alt="AMPER logo" width="90px"/>
+          <h2>AMPER</h2>
         </div>
-        <div class="container-top-right">
-          <ul class="list-nav">
-            <li><a href="#" class="navbar-link">Inicio</a></li>
-            <li><a href="#" class="navbar-link">Emprendimientos</a></li>
-            <li><a href="#" class="navbar-link">Quiénes somos</a></li>
-            <li><a href="#" class="navbar-link">Iniciativas</a></li>
-            <li><a href="#" class="navbar-link">Contacto</a></li>
-            <li><a href="#" class="navbar-link">Donar</a></li>
-            <li><a href="#" class="navbar-link">Iniciar sesión</a></li>
-          </ul>
-          <ul class="list-aboutus">
-            <li>contacto@amper.com</li>
-            <li>+54 11 4385-3254</li>
-            <li>CABA, Buenos Aires</li>
+        <div class="pages">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="/amper/index.html">Inicio</a></li>
+            <li>Emprendimientos</li>
+            <li>Quienes somos</li>
+            <li>Iniciativas</li>
+            <li><a href="/amper/pages/donations.html">Donar</a></li>
+            <li>Iniciar sesión</li>
           </ul>
         </div>
-
+        <div class="social">
+          <h3>Social</h3>
+          <p>amperCompany@gmail.com</p>
+          <p>amper@gmail.org</p>
+          <p>+54 11 4385 3254</p>
+          <p>Buenos Aires, Capital Federal</p>
+        </div>
       </div>
-      <div class="container-bottom">
-        <div class="wave w1">   <div class="wave w2"></div></div>
-     
-        
-      </div>
-
-      
-
+      <!-- fondos d footer -->
     </footer>
   </body>
   <script src="./../js/main.js"></script>
