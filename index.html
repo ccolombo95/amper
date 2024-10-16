@@ -1,302 +1,711 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="imgs/favicon.ico"">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imgs/favicon.ico"">
     <title>Amper</title>
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dawning+of+a+New+Day&family=Flamenco:wght@300;400&family=Gaegu:wght@300;400;700&family=Montserrat:ital,wght@0,500;1,300;1,400&family=Neucha&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&family=Ruluko&family=Signika:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/amper/css/style.css" />
-  <script src="/amper/css/index.css"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          'amatic-sc': ['Amatic SC', 'cursive'],
-          'cormorant': ['Cormorant', 'serif'],
-          'dawning-of-a-new-day': ['Dawning of a New Day', 'cursive'],
-          'flamenco': ['Flamenco', 'cursive'],
-          'gaegu': ['Gaegu', 'cursive'],
-          'montserrat': ['Montserrat', 'sans-serif'],
-          'neucha': ['Neucha', 'cursive'],
-          'nunito': ['Nunito', 'sans-serif'],
-          'playfair-display-sc': ['Playfair Display SC', 'serif'],
-          'pompiere': ['Pompiere', 'cursive'],
-          'poppins': ['Poppins', 'sans-serif'],
-          'press-start-2p': ['Press Start 2P', 'cursive'],
-          'quicksand': ['Quicksand', 'sans-serif'],
-          'ruluko': ['Ruluko', 'sans-serif'],
-          'signika': ['Signika', 'sans-serif'],
-        },
-        colors: {
-          clifford: '#da373d',
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dawning+of+a+New+Day&family=Flamenco:wght@300;400&family=Gaegu:wght@300;400;700&family=Montserrat:ital,wght@0,500;1,300;1,400&family=Neucha&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&family=Ruluko&family=Signika:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/amper/css/style.css" />
+    <script src="/amper/css/index.css"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'amatic-sc': ['Amatic SC', 'cursive'],
+            'cormorant': ['Cormorant', 'serif'],
+            'dawning-of-a-new-day': ['Dawning of a New Day', 'cursive'],
+            'flamenco': ['Flamenco', 'cursive'],
+            'gaegu': ['Gaegu', 'cursive'],
+            'montserrat': ['Montserrat', 'sans-serif'],
+            'neucha': ['Neucha', 'cursive'],
+            'nunito': ['Nunito', 'sans-serif'],
+            'playfair-display-sc': ['Playfair Display SC', 'serif'],
+            'pompiere': ['Pompiere', 'cursive'],
+            'poppins': ['Poppins', 'sans-serif'],
+            'press-start-2p': ['Press Start 2P', 'cursive'],
+            'quicksand': ['Quicksand', 'sans-serif'],
+            'ruluko': ['Ruluko', 'sans-serif'],
+            'signika': ['Signika', 'sans-serif'],
+          },
+          colors: {
+            clifford: '#da373d',
+          }
         }
       }
     }
-  }
-</script>
+  </script>
 
-<body>
-  <header class=""> <!--left-1/2 pt-6  -translate-x-1/2-->
-    <nav class="absolute left-1/2 pt-6 -translate-x-1/2 container flex items-center justify-between z-10">
-      <div class="nav__logo">
-          <h2 class="text-teal-900 font-bold ml-10" style="font-size: 1.5em; margin-bottom: 20px;">Amper</h2>
-      </div>
-      <ul id="menu" class="menu  hidden lg:flex space-x-8 mr-10 font-medium" style="font-size: 1.1rem;">
+  <body>
+    <header class="">
+      <!--left-1/2 pt-6  -translate-x-1/2-->
+      <nav
+        class="absolute left-1/2 pt-6 -translate-x-1/2 container flex items-center justify-between z-10"
+      >
+        <div class="nav__logo">
+          <h2
+            class="text-teal-900 font-bold ml-10"
+            style="font-size: 1.5em; margin-bottom: 20px;"
+          >
+            Amper
+          </h2>
+        </div>
+        <ul
+          id="menu"
+          class="menu  hidden lg:flex space-x-8 mr-10 font-medium"
+          style="font-size: 1.1rem;"
+        >
           <li>
-              <a href="/amper/index.html" class="text-teal-900 nav_verde active">Inicio</a>
+            <a href="/amper/index.html" class="text-teal-900 nav_verde active"
+              >Inicio</a
+            >
           </li>
           <li>
-              <a href="#" class="nav_verde text-teal-900 ">Emprendimientos</a>
+            <a href="#" class="nav_verde text-teal-900 ">Emprendimientos</a>
           </li>
           <li>
-              <a href="#" class="text-teal-900 nav_verde">Quienes somos</a>
+            <a href="#" class="text-teal-900 nav_verde">Quienes somos</a>
           </li>
           <li>
-              <a href="#" class="text-teal-900 nav_verde">Iniciativas</a>
+            <a href="#" class="text-teal-900 nav_verde">Iniciativas</a>
           </li>
           <li>
-              <a href="/amper/pages/donations.html" class="text-teal-900 nav_verde">Donar</a>
+            <a
+              href="/amper/pages/donations.html"
+              class="text-teal-900 nav_verde"
+              >Donar</a
+            >
           </li>
-      </ul>
-  
-      <!-- ICONO DE MENU -->
-      <div id="menu-icon" class="icono-menu lg:hidden flex items-center cursor-pointer">
+        </ul>
+
+        <!-- ICONO DE MENU -->
+        <div
+          id="menu-icon"
+          class="icono-menu lg:hidden flex items-center cursor-pointer"
+        >
           <div class="text-teal-900">
-              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
-              </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+            </svg>
           </div>
-      </div>
-      <div class="icono-cerrar lg:hidden cursor-pointer" id="close-icon" style="display: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill:#fff;">
-              <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
-              <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path>
+        </div>
+        <div
+          class="icono-cerrar lg:hidden cursor-pointer"
+          id="close-icon"
+          style="display: none;"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 24 24"
+            style="fill:#fff;"
+          >
+            <path
+              d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"
+            ></path>
+            <path
+              d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"
+            ></path>
           </svg>
-      </div>
-  </nav>
-
-    <section id="#portada" class="overflow-hidden z-0 relative">
-      <!-- TO DO: GHACER EL TEXTO DE LA PORTADA RESPONSIVE-->
-      <div class=" font-quicksand absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center p4 sm:p-6 md:p-8 xl:p-10 text-white">
-        <h1 class="lg:mt-20 text-4xl sm:text-8xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-3 text-teal-700">Amper</h1>
-        <h2 class="text-lg sm:text-4x1 md:text-4xl lg:text-2xl font-semibold mb-4 text-gray">Apuesta por la innovación, apuesta por el éxito.</h2>
-        <p class=" sm:text-3x1 md:text-lg lg:text-xl mb-6 text-gray-700">Ayuda y soporte a pequeños y medianos emprendimientos. <br> Iluminamos el camino para nunca apagar los sueños!</p>
-        <div><button class="font-poppins px-4 py-2 bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300"><a href="#quienesSomos">Ver más</a></button>
         </div>
-      </div>
+      </nav>
 
-      <div class="lg:w-screen">
-        <svg id="visual" class="w-full h-full lg:block hidden" viewBox="0 0 1920 830" width="1920" height="830" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="1920" height="830" fill="#ffffff"></rect><defs><linearGradient id="grad1_0" x1="56.8%" y1="0%" x2="100%" y2="100%"><stop offset="3.7349397590361484%" stop-color="#009272" stop-opacity="1"></stop><stop offset="96.26506024096385%" stop-color="#009272" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_1" x1="56.8%" y1="0%" x2="100%" y2="100%"><stop offset="3.7349397590361484%" stop-color="#009272" stop-opacity="1"></stop><stop offset="96.26506024096385%" stop-color="#95c9b6" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_2" x1="56.8%" y1="0%" x2="100%" y2="100%"><stop offset="3.7349397590361484%" stop-color="#ffffff" stop-opacity="1"></stop><stop offset="96.26506024096385%" stop-color="#95c9b6" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="43.2%" y2="100%"><stop offset="3.7349397590361484%" stop-color="#009272" stop-opacity="1"></stop><stop offset="96.26506024096385%" stop-color="#009272" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_1" x1="0%" y1="0%" x2="43.2%" y2="100%"><stop offset="3.7349397590361484%" stop-color="#95c9b6" stop-opacity="1"></stop><stop offset="96.26506024096385%" stop-color="#009272" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_2" x1="0%" y1="0%" x2="43.2%" y2="100%"><stop offset="3.7349397590361484%" stop-color="#95c9b6" stop-opacity="1"></stop><stop offset="96.26506024096385%" stop-color="#ffffff" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(1920, 0)"><path d="M0 705.5C-90.8 681.2 -181.5 656.8 -254.1 613.5C-326.7 570.1 -381.1 507.6 -451.1 451.1C-521.2 394.7 -606.8 344.2 -651.8 270C-696.8 195.8 -701.1 97.9 -705.5 0L0 0Z" fill="#cae4da"></path><path d="M0 470.3C-60.5 454.1 -121 437.9 -169.4 409C-217.8 380 -254.1 338.4 -300.8 300.8C-347.4 263.1 -404.5 229.4 -434.5 180C-464.5 130.5 -467.4 65.3 -470.3 0L0 0Z" fill="#5ead93"></path><path d="M0 235.2C-30.3 227.1 -60.5 218.9 -84.7 204.5C-108.9 190 -127 169.2 -150.4 150.4C-173.7 131.6 -202.3 114.7 -217.3 90C-232.3 65.3 -233.7 32.6 -235.2 0L0 0Z" fill="#009272"></path></g><g transform="translate(0, 830)"><path d="M0 -705.5C100.2 -705.3 200.4 -705.2 270 -651.8C339.6 -598.4 378.6 -491.7 412.2 -412.2C445.8 -332.7 474 -280.4 522 -216.2C570 -152 637.7 -76 705.5 0L0 0Z" fill="#cae4da"></path><path d="M0 -470.3C66.8 -470.2 133.6 -470.1 180 -434.5C226.4 -398.9 252.4 -327.8 274.8 -274.8C297.2 -221.8 316 -186.9 348 -144.1C380 -101.4 425.2 -50.7 470.3 0L0 0Z" fill="#5ead93"></path><path d="M0 -235.2C33.4 -235.1 66.8 -235.1 90 -217.3C113.2 -199.5 126.2 -163.9 137.4 -137.4C148.6 -110.9 158 -93.5 174 -72.1C190 -50.7 212.6 -25.3 235.2 0L0 0Z" fill="#009272"></path></g></svg>
-      </div>
-      <!-- TO DO: GENERAR UN MEJOR FONDO PARA RESPONSIVE -->
-      <div class="lg:w-screen">
-        <svg id="visual"  class="w-full h-full lg:hidden block" viewBox="0 0 600 900" width="600" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="600" height="900" fill="#ffffff"></rect><defs><linearGradient id="grad1_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#009272" stop-opacity="1"></stop><stop offset="70%" stop-color="#009272" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#009272" stop-opacity="1"></stop><stop offset="70%" stop-color="#95c9b6" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#ffffff" stop-opacity="1"></stop><stop offset="70%" stop-color="#95c9b6" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#009272" stop-opacity="1"></stop><stop offset="70%" stop-color="#009272" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#95c9b6" stop-opacity="1"></stop><stop offset="70%" stop-color="#009272" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#95c9b6" stop-opacity="1"></stop><stop offset="70%" stop-color="#ffffff" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(600, 0)"><path d="M0 459.7C-59.5 453 -119.1 446.2 -175.9 424.7C-232.8 403.2 -286.9 366.9 -319.6 319.6C-352.3 272.3 -363.6 213.9 -383.4 158.8C-403.2 103.7 -431.4 51.9 -459.7 0L0 0Z" fill="#cae4da"></path><path d="M0 306.5C-39.7 302 -79.4 297.5 -117.3 283.1C-155.2 268.8 -191.3 244.6 -213.1 213.1C-234.9 181.5 -242.4 142.6 -255.6 105.9C-268.8 69.1 -287.6 34.6 -306.5 0L0 0Z" fill="#5ead93"></path><path d="M0 153.2C-19.8 151 -39.7 148.7 -58.6 141.6C-77.6 134.4 -95.6 122.3 -106.5 106.5C-117.4 90.8 -121.2 71.3 -127.8 52.9C-134.4 34.6 -143.8 17.3 -153.2 0L0 0Z" fill="#009272"></path></g><g transform="translate(0, 900)"><path d="M0 -459.7C61.2 -454.9 122.5 -450.1 175.9 -424.7C229.4 -399.3 275 -353.3 304.8 -304.8C334.5 -256.2 348.2 -205.1 371.4 -153.8C394.6 -102.6 427.1 -51.3 459.7 0L0 0Z" fill="#cae4da"></path><path d="M0 -306.5C40.8 -303.3 81.6 -300.1 117.3 -283.1C152.9 -266.2 183.4 -235.6 203.2 -203.2C223 -170.8 232.2 -136.7 247.6 -102.6C263 -68.4 284.8 -34.2 306.5 0L0 0Z" fill="#5ead93"></path><path d="M0 -153.2C20.4 -151.6 40.8 -150 58.6 -141.6C76.5 -133.1 91.7 -117.8 101.6 -101.6C111.5 -85.4 116.1 -68.4 123.8 -51.3C131.5 -34.2 142.4 -17.1 153.2 0L0 0Z" fill="#009272"></path></g></svg>          
-      </div>
-  </section>
-  
-</header>
-
-  <main>
-    <section id="quienesSomos" class="py-6 mb-6 lg:px-7 sm:px-1 mx-5">
-      <div class="text-teal-800 ml-5 mt-5 text-4xl font-bold font-poppins">
-        <p>Quienes somos</p>
-        <div class="w-full h-1 bg-gradient-to-r from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"></div>
-      </div>
-
-      <div class="contenedor flex flex-col lg:flex-row items-center justify-center gap-2">
-        <div class="lado-iqz flex-shrink-0" data-aos="fade-right" >
-          <img src="imgs/image-us.png" alt="Imagen de nosotros" class="w-full max-w-xs lg:max-w-md">
+      <section id="#portada" class="overflow-hidden z-0 relative">
+        <!-- TO DO: GHACER EL TEXTO DE LA PORTADA RESPONSIVE-->
+        <div
+          class=" font-quicksand absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center p4 sm:p-6 md:p-8 xl:p-10 text-white"
+        >
+          <h1
+            class="lg:mt-20 text-4xl sm:text-8xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-3 text-teal-700"
+          >
+            Amper
+          </h1>
+          <h2
+            class="text-lg sm:text-4x1 md:text-4xl lg:text-2xl font-semibold mb-4 text-gray"
+          >
+            Apuesta por la innovación, apuesta por el éxito.
+          </h2>
+          <p class=" sm:text-3x1 md:text-lg lg:text-xl mb-6 text-gray-700">
+            Ayuda y soporte a pequeños y medianos emprendimientos. <br />
+            Iluminamos el camino para nunca apagar los sueños!
+          </p>
+          <div>
+            <button
+              class="font-poppins px-4 py-2 bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300"
+            >
+              <a href="#quienesSomos">Ver más</a>
+            </button>
+          </div>
         </div>
-        <div class="lado-der flex-grow lg:text-left px-4 lg:px-10 font-poppins text-lg">
-          <p class="text-left text-3xl mb-5">Un poco de nuestra <span class="text-teal-700 font-bold">misión...</span></p>
-          <p> En <span class=" text-teal-700 font-bold">Amper</span>, somos una plataforma sin fines de lucro que conecta a emprendedores de todas las edades con donantes que ofrecen apoyo financiero y mentoría. <br> Nuestro <span class="text-teal-700 font-bold">propósito</span> es fomentar la innovación y generar un impacto social positivo, ayudando a transformar ideas en proyectos concretos.</p>
-          <div class="flex mt-5" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-offset="0">
-            <button class="px-4 py-2 bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300">
+
+        <div class="lg:w-screen">
+          <svg
+            id="visual"
+            class="w-full h-full lg:block hidden"
+            viewBox="0 0 1920 830"
+            width="1920"
+            height="830"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+          >
+            <rect x="0" y="0" width="1920" height="830" fill="#ffffff"></rect>
+            <defs>
+              <linearGradient
+                id="grad1_0"
+                x1="56.8%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="3.7349397590361484%"
+                  stop-color="#009272"
+                  stop-opacity="1"
+                ></stop>
+                <stop
+                  offset="96.26506024096385%"
+                  stop-color="#009272"
+                  stop-opacity="1"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient
+                id="grad1_1"
+                x1="56.8%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="3.7349397590361484%"
+                  stop-color="#009272"
+                  stop-opacity="1"
+                ></stop>
+                <stop
+                  offset="96.26506024096385%"
+                  stop-color="#95c9b6"
+                  stop-opacity="1"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient
+                id="grad1_2"
+                x1="56.8%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="3.7349397590361484%"
+                  stop-color="#ffffff"
+                  stop-opacity="1"
+                ></stop>
+                <stop
+                  offset="96.26506024096385%"
+                  stop-color="#95c9b6"
+                  stop-opacity="1"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad2_0" x1="0%" y1="0%" x2="43.2%" y2="100%">
+                <stop
+                  offset="3.7349397590361484%"
+                  stop-color="#009272"
+                  stop-opacity="1"
+                ></stop>
+                <stop
+                  offset="96.26506024096385%"
+                  stop-color="#009272"
+                  stop-opacity="1"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad2_1" x1="0%" y1="0%" x2="43.2%" y2="100%">
+                <stop
+                  offset="3.7349397590361484%"
+                  stop-color="#95c9b6"
+                  stop-opacity="1"
+                ></stop>
+                <stop
+                  offset="96.26506024096385%"
+                  stop-color="#009272"
+                  stop-opacity="1"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad2_2" x1="0%" y1="0%" x2="43.2%" y2="100%">
+                <stop
+                  offset="3.7349397590361484%"
+                  stop-color="#95c9b6"
+                  stop-opacity="1"
+                ></stop>
+                <stop
+                  offset="96.26506024096385%"
+                  stop-color="#ffffff"
+                  stop-opacity="1"
+                ></stop>
+              </linearGradient>
+            </defs>
+            <g transform="translate(1920, 0)">
+              <path
+                d="M0 705.5C-90.8 681.2 -181.5 656.8 -254.1 613.5C-326.7 570.1 -381.1 507.6 -451.1 451.1C-521.2 394.7 -606.8 344.2 -651.8 270C-696.8 195.8 -701.1 97.9 -705.5 0L0 0Z"
+                fill="#cae4da"
+              ></path>
+              <path
+                d="M0 470.3C-60.5 454.1 -121 437.9 -169.4 409C-217.8 380 -254.1 338.4 -300.8 300.8C-347.4 263.1 -404.5 229.4 -434.5 180C-464.5 130.5 -467.4 65.3 -470.3 0L0 0Z"
+                fill="#5ead93"
+              ></path>
+              <path
+                d="M0 235.2C-30.3 227.1 -60.5 218.9 -84.7 204.5C-108.9 190 -127 169.2 -150.4 150.4C-173.7 131.6 -202.3 114.7 -217.3 90C-232.3 65.3 -233.7 32.6 -235.2 0L0 0Z"
+                fill="#009272"
+              ></path>
+            </g>
+            <g transform="translate(0, 830)">
+              <path
+                d="M0 -705.5C100.2 -705.3 200.4 -705.2 270 -651.8C339.6 -598.4 378.6 -491.7 412.2 -412.2C445.8 -332.7 474 -280.4 522 -216.2C570 -152 637.7 -76 705.5 0L0 0Z"
+                fill="#cae4da"
+              ></path>
+              <path
+                d="M0 -470.3C66.8 -470.2 133.6 -470.1 180 -434.5C226.4 -398.9 252.4 -327.8 274.8 -274.8C297.2 -221.8 316 -186.9 348 -144.1C380 -101.4 425.2 -50.7 470.3 0L0 0Z"
+                fill="#5ead93"
+              ></path>
+              <path
+                d="M0 -235.2C33.4 -235.1 66.8 -235.1 90 -217.3C113.2 -199.5 126.2 -163.9 137.4 -137.4C148.6 -110.9 158 -93.5 174 -72.1C190 -50.7 212.6 -25.3 235.2 0L0 0Z"
+                fill="#009272"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <!-- TO DO: GENERAR UN MEJOR FONDO PARA RESPONSIVE -->
+        <div class="lg:w-screen">
+          <svg
+            id="visual"
+            class="w-full h-full lg:hidden block"
+            viewBox="0 0 600 900"
+            width="600"
+            height="900"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+          >
+            <rect x="0" y="0" width="600" height="900" fill="#ffffff"></rect>
+            <defs>
+              <linearGradient id="grad1_0" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="30%" stop-color="#009272" stop-opacity="1"></stop>
+                <stop offset="70%" stop-color="#009272" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad1_1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="30%" stop-color="#009272" stop-opacity="1"></stop>
+                <stop offset="70%" stop-color="#95c9b6" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad1_2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="30%" stop-color="#ffffff" stop-opacity="1"></stop>
+                <stop offset="70%" stop-color="#95c9b6" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad2_0" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="30%" stop-color="#009272" stop-opacity="1"></stop>
+                <stop offset="70%" stop-color="#009272" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad2_1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="30%" stop-color="#95c9b6" stop-opacity="1"></stop>
+                <stop offset="70%" stop-color="#009272" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="grad2_2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="30%" stop-color="#95c9b6" stop-opacity="1"></stop>
+                <stop offset="70%" stop-color="#ffffff" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <g transform="translate(600, 0)">
+              <path
+                d="M0 459.7C-59.5 453 -119.1 446.2 -175.9 424.7C-232.8 403.2 -286.9 366.9 -319.6 319.6C-352.3 272.3 -363.6 213.9 -383.4 158.8C-403.2 103.7 -431.4 51.9 -459.7 0L0 0Z"
+                fill="#cae4da"
+              ></path>
+              <path
+                d="M0 306.5C-39.7 302 -79.4 297.5 -117.3 283.1C-155.2 268.8 -191.3 244.6 -213.1 213.1C-234.9 181.5 -242.4 142.6 -255.6 105.9C-268.8 69.1 -287.6 34.6 -306.5 0L0 0Z"
+                fill="#5ead93"
+              ></path>
+              <path
+                d="M0 153.2C-19.8 151 -39.7 148.7 -58.6 141.6C-77.6 134.4 -95.6 122.3 -106.5 106.5C-117.4 90.8 -121.2 71.3 -127.8 52.9C-134.4 34.6 -143.8 17.3 -153.2 0L0 0Z"
+                fill="#009272"
+              ></path>
+            </g>
+            <g transform="translate(0, 900)">
+              <path
+                d="M0 -459.7C61.2 -454.9 122.5 -450.1 175.9 -424.7C229.4 -399.3 275 -353.3 304.8 -304.8C334.5 -256.2 348.2 -205.1 371.4 -153.8C394.6 -102.6 427.1 -51.3 459.7 0L0 0Z"
+                fill="#cae4da"
+              ></path>
+              <path
+                d="M0 -306.5C40.8 -303.3 81.6 -300.1 117.3 -283.1C152.9 -266.2 183.4 -235.6 203.2 -203.2C223 -170.8 232.2 -136.7 247.6 -102.6C263 -68.4 284.8 -34.2 306.5 0L0 0Z"
+                fill="#5ead93"
+              ></path>
+              <path
+                d="M0 -153.2C20.4 -151.6 40.8 -150 58.6 -141.6C76.5 -133.1 91.7 -117.8 101.6 -101.6C111.5 -85.4 116.1 -68.4 123.8 -51.3C131.5 -34.2 142.4 -17.1 153.2 0L0 0Z"
+                fill="#009272"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="quienesSomos" class="py-6 mb-6 lg:px-7 sm:px-1 mx-5">
+        <div class="text-teal-800 ml-5 mt-5 text-4xl font-bold font-poppins">
+          <p>Quienes somos</p>
+          <div
+            class="w-full h-1 bg-gradient-to-r from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"
+          ></div>
+        </div>
+
+        <div
+          class="contenedor flex flex-col lg:flex-row items-center justify-center gap-2"
+        >
+          <div class="lado-iqz flex-shrink-0" data-aos="fade-right">
+            <img
+              src="imgs/image-us.png"
+              alt="Imagen de nosotros"
+              class="w-full max-w-xs lg:max-w-md"
+            />
+          </div>
+          <div
+            class="lado-der flex-grow lg:text-left px-4 lg:px-10 font-poppins text-lg"
+          >
+            <p class="text-left text-3xl mb-5">
+              Un poco de nuestra
+              <span class="text-teal-700 font-bold">misión...</span>
+            </p>
+            <p>
+              En <span class=" text-teal-700 font-bold">Amper</span>, somos una
+              plataforma sin fines de lucro que conecta a emprendedores de todas
+              las edades con donantes que ofrecen apoyo financiero y mentoría.
+              <br />
+              Nuestro <span class="text-teal-700 font-bold">propósito</span> es
+              fomentar la innovación y generar un impacto social positivo,
+              ayudando a transformar ideas en proyectos concretos.
+            </p>
+            <div
+              class="flex mt-5"
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-offset="0"
+            >
+              <button
+                class="px-4 py-2 bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300"
+              >
+                Conocer más
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="emprendimientos" class="relative overflow-hidden ">
+        <div
+          class="text-cyan-500 text-right text-4xl font-bold font-poppins py-6 mb-6 lg:px-7 sm:px-1 mx-5 "
+        >
+          <p>Emprendimientos</p>
+          <div
+            class="w-full h-1 bg-gradient-to-r from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"
+          ></div>
+        </div>
+        <div class="w-screen text-center">
+          <div>
+            <svg
+              id="visual"
+              viewBox="0 0 1920 520"
+              width="1920"
+              height="520"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+            >
+              <path
+                d="M0 152L53.3 160.7C106.7 169.3 213.3 186.7 320 175.3C426.7 164 533.3 124 640 114.5C746.7 105 853.3 126 960 149.5C1066.7 173 1173.3 199 1280 186C1386.7 173 1493.3 121 1600 105.3C1706.7 89.7 1813.3 110.3 1866.7 120.7L1920 131L1920 0L1866.7 0C1813.3 0 1706.7 0 1600 0C1493.3 0 1386.7 0 1280 0C1173.3 0 1066.7 0 960 0C853.3 0 746.7 0 640 0C533.3 0 426.7 0 320 0C213.3 0 106.7 0 53.3 0L0 0Z"
+                fill="#ffffff"
+              ></path>
+              <path
+                d="M0 459L53.3 430.3C106.7 401.7 213.3 344.3 320 350.3C426.7 356.3 533.3 425.7 640 432.7C746.7 439.7 853.3 384.3 960 362.7C1066.7 341 1173.3 353 1280 365C1386.7 377 1493.3 389 1600 413.3C1706.7 437.7 1813.3 474.3 1866.7 492.7L1920 511L1920 129L1866.7 118.7C1813.3 108.3 1706.7 87.7 1600 103.3C1493.3 119 1386.7 171 1280 184C1173.3 197 1066.7 171 960 147.5C853.3 124 746.7 103 640 112.5C533.3 122 426.7 162 320 173.3C213.3 184.7 106.7 167.3 53.3 158.7L0 150Z"
+                fill="#20b2a1"
+              ></path>
+              <path
+                d="M0 521L53.3 521C106.7 521 213.3 521 320 521C426.7 521 533.3 521 640 521C746.7 521 853.3 521 960 521C1066.7 521 1173.3 521 1280 521C1386.7 521 1493.3 521 1600 521C1706.7 521 1813.3 521 1866.7 521L1920 521L1920 509L1866.7 490.7C1813.3 472.3 1706.7 435.7 1600 411.3C1493.3 387 1386.7 375 1280 363C1173.3 351 1066.7 339 960 360.7C853.3 382.3 746.7 437.7 640 430.7C533.3 423.7 426.7 354.3 320 348.3C213.3 342.3 106.7 399.7 53.3 428.3L0 457Z"
+                fill="#ffffff"
+              ></path>
+            </svg>
+          </div>
+          <div class="">
+            <button
+              class="px-4 py-4 font-poppins bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300"
+            >
               Conocer más
             </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="emprendimientos" class="relative overflow-hidden ">
-      <div class="text-cyan-500 text-right text-4xl font-bold font-poppins py-6 mb-6 lg:px-7 sm:px-1 mx-5 ">
-        <p>Emprendimientos</p>
-        <div class="w-full h-1 bg-gradient-to-r from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"></div>
-      </div>
-      <div class="w-screen text-center">
-        <div><svg id="visual" viewBox="0 0 1920 520" width="1920" height="520" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 152L53.3 160.7C106.7 169.3 213.3 186.7 320 175.3C426.7 164 533.3 124 640 114.5C746.7 105 853.3 126 960 149.5C1066.7 173 1173.3 199 1280 186C1386.7 173 1493.3 121 1600 105.3C1706.7 89.7 1813.3 110.3 1866.7 120.7L1920 131L1920 0L1866.7 0C1813.3 0 1706.7 0 1600 0C1493.3 0 1386.7 0 1280 0C1173.3 0 1066.7 0 960 0C853.3 0 746.7 0 640 0C533.3 0 426.7 0 320 0C213.3 0 106.7 0 53.3 0L0 0Z" fill="#ffffff"></path><path d="M0 459L53.3 430.3C106.7 401.7 213.3 344.3 320 350.3C426.7 356.3 533.3 425.7 640 432.7C746.7 439.7 853.3 384.3 960 362.7C1066.7 341 1173.3 353 1280 365C1386.7 377 1493.3 389 1600 413.3C1706.7 437.7 1813.3 474.3 1866.7 492.7L1920 511L1920 129L1866.7 118.7C1813.3 108.3 1706.7 87.7 1600 103.3C1493.3 119 1386.7 171 1280 184C1173.3 197 1066.7 171 960 147.5C853.3 124 746.7 103 640 112.5C533.3 122 426.7 162 320 173.3C213.3 184.7 106.7 167.3 53.3 158.7L0 150Z" fill="#20b2a1"></path><path d="M0 521L53.3 521C106.7 521 213.3 521 320 521C426.7 521 533.3 521 640 521C746.7 521 853.3 521 960 521C1066.7 521 1173.3 521 1280 521C1386.7 521 1493.3 521 1600 521C1706.7 521 1813.3 521 1866.7 521L1920 521L1920 509L1866.7 490.7C1813.3 472.3 1706.7 435.7 1600 411.3C1493.3 387 1386.7 375 1280 363C1173.3 351 1066.7 339 960 360.7C853.3 382.3 746.7 437.7 640 430.7C533.3 423.7 426.7 354.3 320 348.3C213.3 342.3 106.7 399.7 53.3 428.3L0 457Z" fill="#ffffff"></path></svg></div>
-        <div class="">
-          <button class="px-4 py-4 font-poppins bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300">
-            Conocer más
-          </button>
+      <section id="iniciativas" class="py-6 mb-6 lg:px-7 sm:px-1 mx-5">
+        <!-- TITULO DE SECCION -->
+        <div class="text-teal-800 ml-5 mt-5 text-4xl font-bold font-poppins">
+          <p>Iniciativas</p>
+          <div
+            class="w-full h-1 bg-gradient-to-r  from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"
+          ></div>
         </div>
-      </div>
-    </section>
-    
-    <section id="iniciativas" class="py-6 mb-6 lg:px-7 sm:px-1 mx-5">
-      <!-- TITULO DE SECCION -->
-      <div class="text-teal-800 ml-5 mt-5 text-4xl font-bold font-poppins">
-        <p>Iniciativas</p>
-      <div class="w-full h-1 bg-gradient-to-r  from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"></div>
-      </div>
-      <!-- FONDO -->
-      <div class="absolute lg:block hidden">
-        <svg id="visual" class="w-full h-full" viewBox="0 0 1920 860" width="1920" height="860" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="1920" height="860" fill="#ffffff"></rect><g fill="#75c1b1"><circle r="85" cx="790" cy="528"></circle><circle r="32" cx="1763" cy="682"></circle><circle r="52" cx="559" cy="723"></circle><circle r="56" cx="1340" cy="204"></circle><circle r="46" cx="394" cy="424"></circle><circle r="53" cx="1593" cy="153"></circle><circle r="39" cx="310" cy="163"></circle><circle r="76" cx="1399" cy="451"></circle><circle r="75" cx="1553" cy="738"></circle><circle r="39" cx="139" cy="658"></circle><circle r="79" cx="794" cy="149"></circle><circle r="42" cx="627" cy="385"></circle><circle r="62" cx="1117" cy="469"></circle><circle r="49" cx="1621" cy="398"></circle><circle r="54" cx="134" cy="204"></circle></g></svg>
-      </div>
-      <!-- PARTE DE CAJAS -->
-      <div id="info-cajas" class="py-14 ">
-        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 text-white font-quicksand">
-          
-          <div class="bg-teal-900 shadow-lg p-10 h-96 z-30 " data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
-            <h3 class="text-xl font-semibold ">PLANIFICACIÓN EMPRESARIAL</h3>
-            <p class="text-xl py-3">Te ayudamos a definir las metas y estrategias clave para guiar a tu empresa de manera eficiente y efectiva.</p>
-            <div class="fixed bottom-0 right-0 m-4 p-7">
-              <i class="fa-solid fa-arrow-right text-3xl"></i>
-            </div>
-          </div>
-          
-          <div class="bg-teal-600 shadow-lg p-10 h-96 z-20" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
-            <h3 class="text-xl font-semibold  ">MARKETING DIGITAL</h3>
-            <p class="text-xl py-3">Te ayudamos a definir las estrategias clave del mundo digital para impulsar el crecimiento y éxito de tu empresa.</p>
-            <div class="fixed bottom-0 right-0 m-4 p-7">
-              <i class="fa-solid fa-arrow-right text-3xl"></i>
-            </div>
-          </div>
-          
-          <div class="bg-teal-500 shadow-lg p-10 h-96 z-10" data-aos="fade-right" data-aos-offset="350" data-aos-easing="ease-in-sine">
-            <h3 class="text-xl font-semibold ">ASESORÍA LEGAL</h3>
-            <p class="text-xl py-3">Te brindamos todo lo necesario para asegurar y fortalecer la protección jurídica de tu empresa.</p>
-            <div class="fixed bottom-0 right-0 m-4 p-7">
-              <i class="fa-solid fa-arrow-right text-3xl"></i>
-            </div>
-          </div>
+        <!-- FONDO -->
+        <div class="absolute lg:block hidden">
+          <svg
+            id="visual"
+            class="w-full h-full"
+            viewBox="0 0 1920 860"
+            width="1920"
+            height="860"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+          >
+            <rect x="0" y="0" width="1920" height="860" fill="#ffffff"></rect>
+            <g fill="#75c1b1">
+              <circle r="85" cx="790" cy="528"></circle>
+              <circle r="32" cx="1763" cy="682"></circle>
+              <circle r="52" cx="559" cy="723"></circle>
+              <circle r="56" cx="1340" cy="204"></circle>
+              <circle r="46" cx="394" cy="424"></circle>
+              <circle r="53" cx="1593" cy="153"></circle>
+              <circle r="39" cx="310" cy="163"></circle>
+              <circle r="76" cx="1399" cy="451"></circle>
+              <circle r="75" cx="1553" cy="738"></circle>
+              <circle r="39" cx="139" cy="658"></circle>
+              <circle r="79" cx="794" cy="149"></circle>
+              <circle r="42" cx="627" cy="385"></circle>
+              <circle r="62" cx="1117" cy="469"></circle>
+              <circle r="49" cx="1621" cy="398"></circle>
+              <circle r="54" cx="134" cy="204"></circle>
+            </g>
+          </svg>
         </div>
-        <div class="flex justify-center mt-8 relative font-poppins">
-          <button class="px-4 py-3 bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300">
-            Conocer más
-          </button>
-      </div>
-      </div>
-    </section>
+        <!-- PARTE DE CAJAS -->
+        <div id="info-cajas" class="py-14 ">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 text-white font-quicksand"
+          >
+            <div
+              class="bg-teal-900 shadow-lg p-10 h-96 z-30 "
+              data-aos="fade-right"
+              data-aos-offset="150"
+              data-aos-easing="ease-in-sine"
+            >
+              <h3 class="text-xl font-semibold ">PLANIFICACIÓN EMPRESARIAL</h3>
+              <p class="text-xl py-3">
+                Te ayudamos a definir las metas y estrategias clave para guiar a
+                tu empresa de manera eficiente y efectiva.
+              </p>
+              <div class="fixed bottom-0 right-0 m-4 p-7">
+                <i class="fa-solid fa-arrow-right text-3xl"></i>
+              </div>
+            </div>
 
-    <section id="numeros" class="mb-14 font-poppins font-medium">
-      <div class="container mx-auto">
+            <div
+              class="bg-teal-600 shadow-lg p-10 h-96 z-20"
+              data-aos="fade-right"
+              data-aos-offset="250"
+              data-aos-easing="ease-in-sine"
+            >
+              <h3 class="text-xl font-semibold  ">MARKETING DIGITAL</h3>
+              <p class="text-xl py-3">
+                Te ayudamos a definir las estrategias clave del mundo digital
+                para impulsar el crecimiento y éxito de tu empresa.
+              </p>
+              <div class="fixed bottom-0 right-0 m-4 p-7">
+                <i class="fa-solid fa-arrow-right text-3xl"></i>
+              </div>
+            </div>
+
+            <div
+              class="bg-teal-500 shadow-lg p-10 h-96 z-10"
+              data-aos="fade-right"
+              data-aos-offset="350"
+              data-aos-easing="ease-in-sine"
+            >
+              <h3 class="text-xl font-semibold ">ASESORÍA LEGAL</h3>
+              <p class="text-xl py-3">
+                Te brindamos todo lo necesario para asegurar y fortalecer la
+                protección jurídica de tu empresa.
+              </p>
+              <div class="fixed bottom-0 right-0 m-4 p-7">
+                <i class="fa-solid fa-arrow-right text-3xl"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8 relative font-poppins">
+            <button
+              class="px-4 py-3 bg-teal-600 text-white font-medium rounded-lg shadow-lg hover:bg-teal-700 transition-shadow duration-300"
+            >
+              Conocer más
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="numeros" class="mb-14 font-poppins font-medium">
+        <div class="container mx-auto">
           <div class="flex flex-wrap justify-center text-center">
-              <div class="w-full sm:w-6/12 md:w-3/12 p-4">
-                  <div class="">
-                      <i class="fa fa-coffee fa-2x text-teal-800 mb-4"></i>
-                      <h2 class="text-4xl font-bold text-teal-900 ">+5000</h2>
-                      <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
-                      <p class="text-lg text-teal-900">Participantes en nuestros eventos de networking</p>
-                  </div>
+            <div class="w-full sm:w-6/12 md:w-3/12 p-4">
+              <div class="">
+                <i class="fa fa-coffee fa-2x text-teal-800 mb-4"></i>
+                <h2 class="text-4xl font-bold text-teal-900 ">+5000</h2>
+                <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
+                <p class="text-lg text-teal-900">
+                  Participantes en nuestros eventos de networking
+                </p>
               </div>
-              <div class="w-full sm:w-6/12 md:w-3/12 p-4">
-                  <div class="">
-                      <i class="fa-solid fa-briefcase fa-2x text-teal-800 mb-4"></i>
-                      <h2 class="text-4xl font-bold text-teal-900 ">+2000</h2>
-                      <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
-                      <p class="text-lg text-teal-900">Emprendimientos nuevos en nuestra plataforma</p>
-                  </div>
+            </div>
+            <div class="w-full sm:w-6/12 md:w-3/12 p-4">
+              <div class="">
+                <i class="fa-solid fa-briefcase fa-2x text-teal-800 mb-4"></i>
+                <h2 class="text-4xl font-bold text-teal-900 ">+2000</h2>
+                <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
+                <p class="text-lg text-teal-900">
+                  Emprendimientos nuevos en nuestra plataforma
+                </p>
               </div>
-              <div class="w-full sm:w-6/12 md:w-3/12 p-4">
-                  <div class="">
-                      <i class="fa-solid fa-heart fa-2x text-teal-800 mb-4"></i>
-                      <h2 class="text-4xl font-bold text-teal-900 ">80%</h2>
-                      <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
-                      <p class="text-lg text-teal-900">De los proyectos incluyen un enfoque en impacto social</p>
-                  </div>
+            </div>
+            <div class="w-full sm:w-6/12 md:w-3/12 p-4">
+              <div class="">
+                <i class="fa-solid fa-heart fa-2x text-teal-800 mb-4"></i>
+                <h2 class="text-4xl font-bold text-teal-900 ">80%</h2>
+                <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
+                <p class="text-lg text-teal-900">
+                  De los proyectos incluyen un enfoque en impacto social
+                </p>
               </div>
-              <div class="w-full sm:w-6/12 md:w-3/12 p-4">
-                  <div class="">
-                      <i class="fa-solid fa-user fa-2x text-teal-800 mb-4"></i>
-                      <h2 class="text-4xl font-bold text-teal-900 ">+50</h2>
-                      <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
-                      <p class="text-lg text-teal-900">Mentores y expertos en diferentes industrias</p>
-                  </div>
+            </div>
+            <div class="w-full sm:w-6/12 md:w-3/12 p-4">
+              <div class="">
+                <i class="fa-solid fa-user fa-2x text-teal-800 mb-4"></i>
+                <h2 class="text-4xl font-bold text-teal-900 ">+50</h2>
+                <div class="h-1 w-12 bg-teal-700 mx-auto my-4"></div>
+                <p class="text-lg text-teal-900">
+                  Mentores y expertos en diferentes industrias
+                </p>
               </div>
+            </div>
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section id="contacto" class="py-6 mb-6 lg:px-7 sm:px-1 mx-5 flex justify-center">
-      <div class="text-teal-800  text-center text-4xl font-bold font-poppins ">
-        <p>Contacto</p>
-      <div class="w-60 h-2 bg-gradient-to-r  from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"></div>
-      </div>
-    </section>
+      <section
+        id="contacto"
+        class="py-6 mb-6 lg:px-7 sm:px-1 mx-5 flex justify-center"
+      >
+        <div
+          class="text-teal-800  text-center text-4xl font-bold font-poppins "
+        >
+          <p>Contacto</p>
+          <div
+            class="w-60 h-2 bg-gradient-to-r  from-teal-800 via-green-700 via-teal-300 to-blue-500 rounded-full"
+          ></div>
+        </div>
+      </section>
 
-    <section class="py-20">
-      <div class=" mx-auto text-center">
-          <button id="scrollToTop" onclick="scrollToTop()" class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-teal-700  text-white rounded-full w-16 h-16 items-center justify-center shadow-xl hover:bg-teal-800 transition duration-300">
-              <i class="fa-solid fa-arrow-up fa-lg"></i>
+      <section class="py-20">
+        <div class=" mx-auto text-center">
+          <button
+            id="scrollToTop"
+            onclick="scrollToTop()"
+            class="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-teal-700  text-white rounded-full w-16 h-16 items-center justify-center shadow-xl hover:bg-teal-800 transition duration-300"
+          >
+            <i class="fa-solid fa-arrow-up fa-lg"></i>
           </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <hr style="border-top: #005547;" />
+      <div class="footer-container">
+        <div class="logo">
+          <img src="/amper/imgs/logo.jpg" alt="AMPER logo" width="90px" />
+          <h2>AMPER</h2>
+        </div>
+        <div class="pages">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="/amper/index.html">Inicio</a></li>
+            <li>Emprendimientos</li>
+            <li>Quienes somos</li>
+            <li>Iniciativas</li>
+            <li><a href="/amper/pages/donations.html">Donar</a></li>
+            <li>Iniciar sesión</li>
+          </ul>
+        </div>
+        <div class="social">
+          <h3>Social</h3>
+          <p>amperCompany@gmail.com</p>
+          <p>amper@gmail.org</p>
+          <p>+54 11 4385 3254</p>
+          <p>Buenos Aires, Capital Federal</p>
+        </div>
       </div>
-    </section>
-    
-  </main>
+      <!-- fondos d footer -->
+    </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0eeaa74056.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AOS.init()
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const menuIcon = document.getElementById("menu-icon");
+          const closeIcon = document.getElementById("close-icon");
+          const menu = document.getElementById("menu");
 
-  <footer>
-    <hr style="border-top: #005547;">
-    <div class="footer-container">
-      <div class="logo">
-        <img src="/amper/imgs/logo.jpg" alt="AMPER logo" width="90px"/>
-        <h2>AMPER</h2>
-      </div>
-      <div class="pages">
-        <h3>Pages</h3>
-        <ul>
-          <li><a href="/amper/index.html">Inicio</a></li>
-          <li>Emprendimientos</li>
-          <li>Quienes somos</li>
-          <li>Iniciativas</li>
-          <li><a href="/amper/pages/donations.html">Donar</a></li>
-          <li>Iniciar sesión</li>
-        </ul>
-      </div>
-      <div class="social">
-        <h3>Social</h3>
-        <p>amperCompany@gmail.com</p>
-        <p>amper@gmail.org</p>
-        <p>+54 11 4385 3254</p>
-        <p>Buenos Aires, Capital Federal</p>
-      </div>
-    </div>
-    <!-- fondos d footer -->
-  </footer>
-  
+          menuIcon.addEventListener("click", function () {
+              menu.classList.toggle("hidden");
+              closeIcon.style.display = "block"; // Mostrar el ícono de cerrar
+              menuIcon.style.display = "none"; // Ocultar el ícono de menú
+          });
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://kit.fontawesome.com/0eeaa74056.js" crossorigin="anonymous"></script>
-  <script>AOS.init()</script>
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.getElementById("menu-icon");
-    const closeIcon = document.getElementById("close-icon");
-    const menu = document.getElementById("menu");
-
-    menuIcon.addEventListener("click", function () {
-        menu.classList.toggle("hidden");
-        closeIcon.style.display = "block"; // Mostrar el ícono de cerrar
-        menuIcon.style.display = "none"; // Ocultar el ícono de menú
-    });
-
-    closeIcon.addEventListener("click", function () {
-        menu.classList.toggle("hidden");
-        closeIcon.style.display = "none"; // Ocultar el ícono de cerrar
-        menuIcon.style.display = "flex"; // Mostrar el ícono de menú
-    });
-});
-  </script>
-
-</body>
-
+          closeIcon.addEventListener("click", function () {
+              menu.classList.toggle("hidden");
+              closeIcon.style.display = "none"; // Ocultar el ícono de cerrar
+              menuIcon.style.display = "flex"; // Mostrar el ícono de menú
+          });
+      });
+    </script>
+  </body>
 </html>

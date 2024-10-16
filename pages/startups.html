@@ -4,55 +4,164 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emprendimientos</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dawning+of+a+New+Day&family=Flamenco:wght@300;400&family=Gaegu:wght@300;400;700&family=Montserrat:ital,wght@0,500;1,300;1,400&family=Neucha&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&family=Ruluko&family=Signika:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/style-startups.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header class="hero" >
-      <nav class="nav container" >
-          <div class="nav__logo" >
-              <h2 class="nav__title">Amper</h2>
+    <header class="hero">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <h2 class="nav__title">Amper</h2>
+        </div>
+        <ul class="nav__link nav__link--menu">
+          <li class="nav__items">
+            <a href="/amper/index.html" class="nav__links">Inicio</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__links">Emprendimientos</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__links">Quienes somos</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__links">Iniciativas</a>
+          </li>
+          <li class="nav__items">
+            <a href="/amper/pages/donations.html" class="nav__links active"
+              >Donar</a
+            >
+          </li>
+          <div class="nav__close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              style="fill:#fff;"
+            >
+              <path
+                d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"
+              ></path>
+              <path
+                d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"
+              ></path>
+            </svg>
           </div>
-          <ul class="nav__link nav__link--menu">
-              <li class="nav__items">
-                  <a href="/amper/index.html" class="nav__links">Inicio</a>
-              </li>
-              <li class="nav__items">
-                  <a href="#" class="nav__links">Emprendimientos</a>
-              </li>
-              <li class="nav__items">
-                  <a href="#" class="nav__links">Quienes somos</a>
-              </li>
-              <li class="nav__items">
-                  <a href="#" class="nav__links">Iniciativas</a>
-              </li>
-              <li class="nav__items">
-                  <a href="/amper/pages/donations.html" class="nav__links active">Donar</a>
-              </li>
-              <div class="nav__close">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill:#fff;"><path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path></svg>                 </div>
-          </ul>
+        </ul>
 
-          <div class="nav__menu">
-              <div class="nav__img">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill:#fff;"><path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path></svg>                </div>
+        <div class="nav__menu">
+          <div class="nav__img">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              style="fill:#fff;"
+            >
+              <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+            </svg>
           </div>
+        </div>
       </nav>
 
       <section class="hero__container container">
-          <h1 class="hero__title">Apoya a Emprendedores Innovadores</h1>
-          <p class="hero__paragraph">Tu apoyo puede ser la clave que impulse a emprendedores apasionados a llevar sus proyectos al siguiente nivel. </p>
-          <a href="#" onclick="desplazar ('PorQueDonar')" class="cta">Comienza ahora</a>
+        <h1 class="hero__title">AMPER ES FUTURO</h1>
+        <p class="hero__paragraph">
+          Seleccionamos emprendedores con gran potencial, los apoyamos en su
+          crecimiento, incrementamos su impacto y los convertimos en modelos a
+          seguir para las nuevas generaciones
+        </p>
       </section>
-  </header>
+    </header>
+
     <main>
-
-
+      <section class="startups">
+        <h2>Nuestros emprendimientos</h2>
+        <div class="startups-container">
+          <div class="startup">
+            <h3 class="startup-title">TravelTales</h3>
+            <p class="startup-text">
+              Una agencia de viajes que se especializa en crear experiencias de
+              viaje personalizadas y únicas para sus clientes.
+            </p>
+            <button>Ver más</button>
+          </div>
+          <div class="startup">
+            <h3 class="startup-title">Sleepeace</h3>
+            <p class="startup-text">
+              Almohadas inteligentes para personas que padecen tinnitus,
+              psicotrastornos o dificultades para conciliar el sueño.
+            </p>
+            <button>Ver más</button>
+          </div>
+          <div class="startup">
+            <h3 class="startup-title">EduKids</h3>
+            <p class="startup-text">
+              Un centro educativo que ofrece programas de aprendizaje
+              innovadores para niños, incluyendo talleres de ciencia, arte y
+              tecnología.
+            </p>
+            <button>Ver más</button>
+          </div>
+          <div class="startup">
+            <h3 class="startup-title">AdoptApp</h3>
+            <p class="startup-text">
+              Creamos conciencia sobre el bienestar animal de la mano de los
+              refugios de la comunidad local.
+            </p>
+            <button>Ver más</button>
+          </div>
+          <div class="startup">
+            <h3 class="startup-title">FitFusión</h3>
+            <p class="startup-text">
+              Un gimnasio que combina entrenamiento físico con clases de yoga y
+              meditación para un bienestar integral.
+            </p>
+            <button>Ver más</button>
+          </div>
+          <div class="startup">
+            <h3 class="startup-title">EcoVida</h3>
+            <p class="startup-text">
+              Una tienda que ofrece productos ecológicos y sostenibles, desde
+              utensilios de cocina hasta ropa hecha de materiales reciclados.
+            </p>
+            <button>Ver más</button>
+          </div>
+        </div>
+      </section>
+      <section class="selection">
+        <p>
+          Únete a Nosotros Si tienes una idea innovadora y el deseo de hacerla
+          crecer, ¡queremos conocerte! No importa tu edad o experiencia previa,
+          lo que importa es tu pasión y determinación. Juntos, podemos construir
+          un futuro lleno de oportunidades y éxito.
+        </p>
+        <button>Conocer más</button>
+      </section>
+      <section class="scroll-to-top-section">
+        <div class="scroll-to-top-container">
+          <button
+            id="scrollToTop"
+            onclick="scrollToTop()"
+            class="scroll-to-top-button"
+          >
+            <i class="fa-solid fa-arrow-up fa-lg"></i>
+          </button>
+        </div>
+      </section>
     </main>
+
     <footer>
-      <hr style="border-top: #005547;">
+      <hr style="border-top: #005547" ; />
       <div class="footer-container">
         <div class="logo">
-          <img src="/amper/imgs/logo.jpg" alt="AMPER logo" width="90px"/>
+          <img src="./../imgs/logo.jpg" alt="AMPER logo" width="90px" />
           <h2>AMPER</h2>
         </div>
         <div class="pages">
@@ -74,8 +183,19 @@
           <p>Buenos Aires, Capital Federal</p>
         </div>
       </div>
-      <!-- fondos d footer -->
     </footer>
+
+    <script src="../js/slider.js"></script>
+    <script src="../js/questions.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0eeaa74056.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AOS.init()
+    </script>
   </body>
   <script src="./../js/main.js"></script>
 </html>
