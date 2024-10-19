@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
+html {
+  scroll-behavior: smooth !important
+}
+
 * {
+  margin: 0;
   box-sizing: border-box;
 }
 body {
@@ -469,7 +474,7 @@ footer .container-top {
 footer {
   font-family: "Poppins" !important;
   position: relative;
-  background-image: url("/amper/imgs/footer.svg"); /* Asegúrate de colocar la ruta correcta de tu SVG */
+  background-image: url("../imgs/footer.svg"); /* Asegúrate de colocar la ruta correcta de tu SVG */
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
