@@ -428,16 +428,7 @@ footer .container-top {
 
   .nav__link--menu {
     position: fixed;
-    background-image: radial-gradient(
-      circle at 0% 0%,
-      #5ea186 0,
-      #4c9980 16.67%,
-      #348f79 33.33%,
-      #008371 50%,
-      #007769 66.67%,
-      #006d64 83.33%,
-      #006562 100%
-    );
+    background-color: rgba(0, 0, 0, 0.9); /* El último valor (0.5) define la opacidad */
     top: 0;
     left: 0;
     height: 100%;
@@ -469,6 +460,23 @@ footer .container-top {
   }
 }
 
+
+.cta {
+  display: inline-block;
+  background-color: #ffffff;
+  justify-self: center;
+  color: #00b193;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 13px 30px;
+  border-radius: 5px;
+}
+
+.cta:hover {
+  background-color: #e7e6e6;
+  transition: 1s;
+}
+
 /*FOOTER GRAL/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 footer {
@@ -489,6 +497,8 @@ footer {
   max-width: 1200px;
   margin: auto;
   padding: 100px;
+  font-size: 1.1rem;
+
 }
 
 .footer-container div {
@@ -544,6 +554,7 @@ footer {
   .footer-container {
     flex-direction: column;
     text-align: center;
+
   }
 
   .footer-container div {
@@ -551,32 +562,32 @@ footer {
   }
 
   .logo h2 {
-    font-size: 22px;
+    font-size: 25px;
   }
 
   .pages ul li,
   .social p {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .pages h3,
   .social h3 {
-    font-size: 16px;
+    font-size: 27px;
   }
 }
 
 @media (max-width: 480px) {
   .logo h2 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .pages ul li,
   .social p {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   .pages h3,
   .social h3 {
-    font-size: 14px;
+    font-size: 20px;
   }
 }

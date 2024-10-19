@@ -19,7 +19,7 @@
           <h2 class="nav__title">Amper</h2>
         </div>
         <ul class="nav__link nav__link--menu">
-          <li class="nav__items">
+          <li class="nav__items" style="padding-bottom: 4px;">
             <a href="/index.html" class="nav__links">Inicio</a>
           </li>
           <li class="nav__items">
@@ -67,21 +67,29 @@
         </div>
       </nav>
 
-      <section class="hero__container container">
-        <h1 class="hero__title">AMPER ES FUTURO</h1>
-        <p class="hero__paragraph">
+      <section class="hero__container container" >
+        <div class="typing-container">
+          <div class="typing-container">
+            <h1 class="hero__title" id="typing-text">AMPER ES FUTURO</h1>
+          </div>
+        </div>
+          <p class="hero__paragraph" style="font-size: 1.2rem;">
           Seleccionamos emprendedores con gran potencial, los apoyamos en su
           crecimiento, incrementamos su impacto y los convertimos en modelos a
           seguir para las nuevas generaciones
         </p>
+        <a href="#startups" class="cta">Ver emprendimientos</a>
+
       </section>
     </header>
 
     <main>
-      <section class="startups">
+      <section class="startups" id="startups">
         <h2>Nuestros emprendimientos</h2>
+        <div class="gradient-bar" style="margin-bottom: 3rem; width: 35rem;"></div> 
+
         <div class="startups-container">
-          <div class="startup">
+          <div class="startup" data-aos="fade-up">
             <h3 class="startup-title">TravelTales</h3>
             <p class="startup-text">
               Una agencia de viajes que se especializa en crear experiencias de
@@ -89,7 +97,7 @@
             </p>
             <button>Ver más</button>
           </div>
-          <div class="startup">
+          <div class="startup" data-aos="fade-up">
             <h3 class="startup-title">Sleepeace</h3>
             <p class="startup-text">
               Almohadas inteligentes para personas que padecen tinnitus,
@@ -97,7 +105,7 @@
             </p>
             <button>Ver más</button>
           </div>
-          <div class="startup">
+          <div class="startup" data-aos="fade-up">
             <h3 class="startup-title">EduKids</h3>
             <p class="startup-text">
               Un centro educativo que ofrece programas de aprendizaje
@@ -106,7 +114,7 @@
             </p>
             <button>Ver más</button>
           </div>
-          <div class="startup">
+          <div class="startup" data-aos="fade-up">
             <h3 class="startup-title">AdoptApp</h3>
             <p class="startup-text">
               Creamos conciencia sobre el bienestar animal de la mano de los
@@ -114,7 +122,7 @@
             </p>
             <button>Ver más</button>
           </div>
-          <div class="startup">
+          <div class="startup" data-aos="fade-up">
             <h3 class="startup-title">FitFusión</h3>
             <p class="startup-text">
               Un gimnasio que combina entrenamiento físico con clases de yoga y
@@ -122,7 +130,7 @@
             </p>
             <button>Ver más</button>
           </div>
-          <div class="startup">
+          <div class="startup" data-aos="fade-up">
             <h3 class="startup-title">EcoVida</h3>
             <p class="startup-text">
               Una tienda que ofrece productos ecológicos y sostenibles, desde
@@ -194,4 +202,19 @@
     </script>
   </body>
   <script src="./../js/main.js"></script>
+  <script>
+  const text = "AMPER ES FUTURO"; // Texto en una sola línea
+  let index = 0;
+
+  function typeWriter() {
+    const element = document.getElementById("typing-text");
+    element.innerHTML = text.slice(0, index); // Agrega el texto progresivamente
+    if (index < text.length) {
+        index++;
+        setTimeout(typeWriter, 100); // Controla la velocidad de escritura
+    }
+  }
+
+window.onload = typeWriter;
+  </script>
 </html>

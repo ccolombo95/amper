@@ -19,17 +19,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(
-      circle at 0% 0%,
-      #5ea186 0,
-      #4c9980 16.67%,
-      #348f79 33.33%,
-      #008371 50%,
-      #007769 66.67%,
-      #006d64 83.33%,
-      #006562 100%
-    ),
-    url("../images/computer.jpg");
+  background-image: linear-gradient(to right bottom, #00d48b, #00cb90, #00c194, #00b896, #00ae96);
+
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
   z-index: -1;
@@ -54,22 +45,6 @@
   margin-bottom: 20px;
 }
 
-.cta {
-  display: inline-block;
-  background-color: #ffffff;
-  justify-self: center;
-  color: #00b193;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 13px 30px;
-  border-radius: 5px;
-}
-
-.cta:hover {
-  background-color: #e7e6e6;
-  transition: 1s;
-}
-
 /* About */
 
 .about {
@@ -78,7 +53,7 @@
 
 .subtitle {
   color: rgb(17 94 89);
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 
 .subtitleHead {

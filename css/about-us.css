@@ -66,6 +66,13 @@
     font-size: 4rem;
 }
 
+/* Animación del cursor parpadeante */
+@keyframes blink-cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
 .hero__paragraph {
     font-size: 1rem;
 }
@@ -145,6 +152,13 @@
     .split-section__img {
         max-width: 45%; /* Ajusta el tamaño de las imágenes en pantallas pequeñas */
     }
+
+    .split-section__paragraph, .steps{
+        text-align: left;
+    }
+    .blockquote-wrapper{
+        margin: 4rem;
+       }
 }
 
 .gradient-bar-mitad{
@@ -222,6 +236,7 @@ span{
 .blockquote-wrapper {
    display: flex;
    height: auto;
+   
 }
 
 .blockquote {
@@ -233,6 +248,7 @@ span{
     width: 100%;
     max-width: 1000px;
     z-index: 1;
+    
     margin: 90px auto;
     align-self: center;
     border-top: solid 1px;
@@ -262,6 +278,7 @@ span{
     .blockquote h1 {
         font-size: 60px;
    }
+   
 }
 
 .blockquote h4 {
