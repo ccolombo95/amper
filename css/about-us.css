@@ -22,7 +22,7 @@
 }
 
 .portada-principal{
-    background-image: url('/imgs/principaldex.svg');
+    background-image: url('./../imgs/principaldex.svg');
 }
 
 .hero__container {
