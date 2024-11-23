@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/imgs/portada-about.svg');
+    background-image: url('./../imgs/portada-about.svg');
     background-size: cover;
     z-index: -1;
 }
@@ -123,7 +123,7 @@
     margin: 0 auto;
     padding: 1rem 1rem;
     background-size: cover;
-  background-position: center;
+    background-position: center;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 860" width="1920" height="860"><rect x="0" y="0" width="1920" height="860" fill="%23ffffff"></rect><g fill="%2375c1b1"><circle r="85" cx="790" cy="528"></circle><circle r="32" cx="1763" cy="682"></circle><circle r="52" cx="559" cy="723"></circle><circle r="56" cx="1340" cy="204"></circle><circle r="46" cx="394" cy="424"></circle><circle r="53" cx="1593" cy="153"></circle><circle r="39" cx="310" cy="163"></circle><circle r="76" cx="1399" cy="451"></circle><circle r="75" cx="1553" cy="738"></circle><circle r="39" cx="139" cy="658"></circle><circle r="79" cx="794" cy="149"></circle><circle r="42" cx="627" cy="385"></circle><circle r="62" cx="1117" cy="469"></circle><circle r="49" cx="1621" cy="398"></circle><circle r="54" cx="134" cy="204"></circle></g></svg>');
 }
 
