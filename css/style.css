@@ -351,8 +351,15 @@ footer .container-top {
   align-items: center;
 }
 
+
+
 .nav__title {
   color: white;
+}
+
+.nav__verde {
+  color: #00503f;
+  text-decoration: none;
 }
 
 .nav__link {
@@ -420,6 +427,32 @@ footer .container-top {
   width: 100%; /* Ancho completo cuando la clase active está presente */
 }
 
+.nav_verde {
+  color: #00503f;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  font-weight: 600;
+}
+
+.nav_verde::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #00503f; 
+  transition: width 0.3s ease-in-out;
+}
+.nav_verde.active::after {
+  width: 100%; /* Ancho completo cuando la clase active está presente */
+}
+
+.nav_verde:hover::after {
+  width: 100%; 
+}
+
 @media (max-width: 800px) {
   .nav__menu,
   .icono-menu {
@@ -442,6 +475,9 @@ footer .container-top {
     pointer-events: none;
     transition: 0.7s opacity;
     font-size: 1.3rem;
+  }
+  .nav__link--menu.index{
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .nav__link--show {
@@ -590,4 +626,45 @@ footer {
   .social h3 {
     font-size: 20px;
   }
+}
+
+
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #005851;
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.ver-mas-btn {
+  margin-top: 10px;
+  display: inline-block; /* Asegura que se comporte como un botón */
+  text-align: center; /* Centra el texto */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  background-color: #009688; /* Color del botón */
+  color: white; /* Color del texto */
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: bold; /* Texto en negrita */
+  padding: 0.75rem 1.5rem; /* Espaciado interno */
+  border: none; /* Sin bordes */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra del botón */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: transform 0.2s, box-shadow 0.2s; /* Animación suave */
+}
+
+.ver-mas-btn:hover {
+  transform: translateY(-2px); /* Efecto de levantar al pasar el mouse */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+.ver-mas-btn:active {
+  transform: translateY(1px); /* Botón se hunde al hacer clic */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); /* Reduce la sombra */
 }

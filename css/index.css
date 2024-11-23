@@ -3,29 +3,7 @@
     z-index: 10;
 }
 
-.nav_verde {
-    color: #00503f;
-    text-decoration: none;
-    position: relative; 
-  }
-  
-.nav_verde::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    background-color: #00503f; 
-    transition: width 0.3s ease-in-out;
-  }
-  .nav_verde.active::after {
-    width: 100%; /* Ancho completo cuando la clase active está presente */
-  }
-  
-  .nav_verde:hover::after {
-    width: 100%; 
-  }
+
   
 #portada {
     position: relative;
@@ -74,3 +52,5 @@
 .portada__boton:hover {
     background-color: #007769; /* Color del botón al pasar el ratón */
 }
+
+
